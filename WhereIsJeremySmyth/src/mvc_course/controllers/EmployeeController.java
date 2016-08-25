@@ -25,20 +25,28 @@ public class EmployeeController {
 	
 	@RequestMapping(value="index.mvc", method=RequestMethod.POST)
 	public String setupEmployeeG(Model model, HttpServletRequest request) {
+		
 		Employee employee = new Employee();
-		System.out.println("1" + request.getParameter("employeeNum"));
 		
 		employee.setEmpID(request.getParameter("employeeNum").toString());
 		employee.setfirstName(request.getParameter("firstName"));
 		employee.setlastName(request.getParameter("lastName"));
+		employee.setAddressLineOne(request.getParameter("addressLineOne"));
+		employee.setAddressLineTwo(request.getParameter("addressLineTwo"));
+		employee.setAddressLineThree(request.getParameter("addressLineThree"));
+		employee.setCity(request.getParameter("city"));
+		employee.setCounty(request.getParameter("county"));
+		employee.setCountry(request.getParameter("country"));
+		employee.setEmailAddress(request.getParameter("emailAddress"));
+		employee.setNatInsuranceNum(request.getParameter("natInsuranceNum"));
+		employee.setAccountName(request.getParameter("accountName"));
+		employee.setIBAN(request.getParameter("IBAN"));
+		employee.setBIC(request.getParameter("BIC"));
+		employee.setStartSalary(Integer.parseInt(request.getParameter("startSalary")));
+		
 		model.addAttribute("employee", employee);
 		
-		System.out.println("2" + request.getParameter("employeeNum"));
-		
 		employeeMapper.insertEmployee(employee);
-		
-		
-		System.out.println("3" + request.getParameter("employeeNum"));
 		
 		return "employee_details";
 	}
