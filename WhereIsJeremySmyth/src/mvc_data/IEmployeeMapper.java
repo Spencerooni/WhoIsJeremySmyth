@@ -6,12 +6,12 @@ import org.apache.ibatis.annotations.Select;
 public interface IEmployeeMapper 
 {
 	@Insert("INSERT INTO employee(employee_id,first_name,last_name) VALUES "
-			+ "('#{empID}', '#{firstName}','#{lastName}')")
+			+ "(#{empID}, #{firstName},#{lastName})")
 	void insertEmployee(Employee newEmployee);
 	
 	
-	@Select("SELECT employee_id FROM employee WHERE employee_id = '#{empID}")
-	public Employee getEmployeeByID(String empID);
-	
-	
+//	@Select("SELECT employee_id FROM employee WHERE employee_id = '#{empID}")
+//	public Employee getEmployeeByID(String empID);
+//	
+//	
 }

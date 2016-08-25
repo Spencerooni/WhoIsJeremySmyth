@@ -10,12 +10,12 @@
 
 <h1>Employee Details Form</h1>
 
-${msg}
+<!--${msg}-->
 <p></p>
 
 
 
-<form action="EmployeeController" method="GET">
+<form action="index.mvc" method="POST">
   Employee Number:<br>
   <input type="text" name="employeeNum"><br>
   First name:<br>
