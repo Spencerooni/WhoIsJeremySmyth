@@ -16,6 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `department`
+--
+
+DROP TABLE IF EXISTS `department`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `department` (
+  `id` tinyint(4) NOT NULL,
+  `name` enum('Enterprise','Evolve','Gov','Finance','Systems','R & D') DEFAULT NULL,
+  `description` varchar(150) DEFAULT NULL,
+  `lead_id` char(6) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `department`
+--
+
+LOCK TABLES `department` WRITE;
+/*!40000 ALTER TABLE `department` DISABLE KEYS */;
+/*!40000 ALTER TABLE `department` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `employee`
 --
 
@@ -26,6 +51,19 @@ CREATE TABLE `employee` (
   `employee_id` char(6) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
+  `address_line_1` varchar(45) DEFAULT NULL,
+  `address_line_2` varchar(45) DEFAULT NULL,
+  `address_line_3` varchar(45) DEFAULT NULL,
+  `city` varchar(40) DEFAULT NULL,
+  `county` varchar(45) DEFAULT NULL,
+  `postcode` varchar(8) DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `email_address` varchar(100) DEFAULT NULL,
+  `national_insurance_uk` char(9) DEFAULT NULL,
+  `account_name` varchar(100) DEFAULT NULL,
+  `IBAN` varchar(34) DEFAULT NULL,
+  `BIC` varchar(9) DEFAULT NULL,
+  `start_salary` decimal(6,2) DEFAULT NULL,
   PRIMARY KEY (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -36,8 +74,33 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES ('AM0001','Annalisa','Misra'),('CO0001','Catherine','O-Neill-Lynch'),('JW0001','Jordan','Williamson');
+INSERT INTO `employee` VALUES ('AM0001','Annalisa','Misra',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CO0001','Catherine','O-Neill-Lynch',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('JW0001','Jordan','Williamson',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `sales_employee`
+--
+
+DROP TABLE IF EXISTS `sales_employee`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sales_employee` (
+  `employee_id` char(6) NOT NULL,
+  `commission_rate` int(11) NOT NULL,
+  `total_sales` int(11) DEFAULT NULL,
+  PRIMARY KEY (`employee_id`),
+  CONSTRAINT `sales_employee_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sales_employee`
+--
+
+LOCK TABLES `sales_employee` WRITE;
+/*!40000 ALTER TABLE `sales_employee` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sales_employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-25 11:58:27
+-- Dump completed on 2016-08-25 12:53:17
