@@ -33,19 +33,19 @@
 		<property name="driverClassName"
 			value="com.mysql.jdbc.Driver">
 		</property>
-		<property name="url" value="jdbc:mysql://localhost/world"></property>
-		<property name="username" value="jwill"></property>
-		<property name="password" value="jwillpassword"></property>
+		<property name="url" value="jdbc:mysql://localhost/employeeDetails"></property>
+		<property name="username" value="jeremysmyth"></property>
+		<property name="password" value="jeremy123"></property>
 	</bean>
 	
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-	<bean id="worldMapper"
+	<bean id="employeeMapper"
 		class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface"
-			value="mvc_data.IWorldMapper">
+			value="mvc_data.IEmployeeMapper">
 		</property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 	</bean>

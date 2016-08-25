@@ -17,39 +17,41 @@ public class Welcome
 {
 	@Autowired
 	private DataSource dataSource;
-	
-	
-	
-	@RequestMapping(value="index.mvc")
-	public String landingPage(Model m)
-	{
-		m.addAttribute("msg", "Hello from the controller!");
-		return "hello";
-	}
-	
-	
-	@RequestMapping(value="CityList.mvc")
-	public String cityList(Model m) {
-	   try {
-	      Connection c = dataSource.getConnection();
-	      Statement s = c.createStatement();
-	      String sql = "SELECT Name, District, Population "
-	         + "FROM City WHERE CountryCode = 'GBR'";
-	      ResultSet rs = s.executeQuery(sql);
-	      List<String[]> rows = new ArrayList<String[]>();
-	      
-	      while(rs.next()){
-	         String[] row = { 
-	               rs.getString(1),
-	               rs.getString(2),
-	               rs.getString(3) };
-	         rows.add(row);
-	      }
-	   
-	      m.addAttribute("rows", rows);
-	   } catch (Exception e) {
-	      System.out.println(e.getMessage());
-	   }
-	   return "CityList"; 
-	}
+//	
+//	
+//	
+//	@RequestMapping(value="index.mvc")
+//	public String landingPage(Model m)
+//	{
+//		m.addAttribute("msg", "Please complete this employee details form");
+//		return "employee_details";
+//	}
+//	
+//	
+//	
+//	
+//	@RequestMapping(value="index.mvc")
+//	public String cityList(Model m) {
+//	   try {
+//	      Connection c = dataSource.getConnection();
+//	      Statement s = c.createStatement();
+//	      String sql = "SELECT Name, District, Population "
+////	         + "FROM City WHERE CountryCode = 'GBR'";
+////	      ResultSet rs = s.executeQuery(sql);
+////	      List<String[]> rows = new ArrayList<String[]>();
+////	      
+////	      while(rs.next()){
+////	         String[] row = { 
+////	               rs.getString(1),
+////	               rs.getString(2),
+////	               rs.getString(3) };
+////	         rows.add(row);
+////	      }
+////	   
+//////	      m.addAttribute("rows", rows);
+//	      } catch (Exception e) {
+//	      System.out.println(e.getMessage());
+//	   }
+//	   return "employee_details"; 
+//	}
 }
