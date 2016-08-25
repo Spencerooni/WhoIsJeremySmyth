@@ -23,9 +23,11 @@ public class Welcome
 	@RequestMapping(value="index.mvc")
 	public String landingPage(Model m)
 	{
-		m.addAttribute("msg", "Hello from the controller!");
-		return "hello";
+		m.addAttribute("msg", "Please complete this employee details form");
+		return "employee_details";
 	}
+	
+	
 	
 	
 	@RequestMapping(value="CityList.mvc")
