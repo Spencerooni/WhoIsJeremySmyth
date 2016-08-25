@@ -51,19 +51,19 @@ CREATE TABLE `employee` (
   `employee_id` char(6) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
-  `address_line_1` varchar(45) DEFAULT NULL,
+  `address_line_1` varchar(45) NOT NULL,
   `address_line_2` varchar(45) DEFAULT NULL,
   `address_line_3` varchar(45) DEFAULT NULL,
-  `city` varchar(40) DEFAULT NULL,
+  `city` varchar(40) NOT NULL,
   `county` varchar(45) DEFAULT NULL,
-  `postcode` varchar(8) DEFAULT NULL,
-  `country` varchar(45) DEFAULT NULL,
-  `email_address` varchar(100) DEFAULT NULL,
-  `national_insurance_uk` char(9) DEFAULT NULL,
-  `account_name` varchar(100) DEFAULT NULL,
+  `postcode` varchar(8) NOT NULL,
+  `country` varchar(45) NOT NULL,
+  `email_address` varchar(100) NOT NULL,
+  `national_insurance_uk` char(9) NOT NULL,
+  `account_name` varchar(100) NOT NULL,
   `IBAN` varchar(34) DEFAULT NULL,
   `BIC` varchar(9) DEFAULT NULL,
-  `start_salary` decimal(6,2) DEFAULT NULL,
+  `start_salary` decimal(6,2) NOT NULL,
   PRIMARY KEY (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -74,7 +74,6 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES ('AM0001','Annalisa','Misra',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CO0001','Catherine','O-Neill-Lynch',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('JW0001','Jordan','Williamson',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,4 +111,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-25 12:53:17
+-- Dump completed on 2016-08-25 15:26:25
