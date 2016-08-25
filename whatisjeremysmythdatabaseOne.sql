@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `employee`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `employee` (
-  `employee_id` char(4) NOT NULL,
+  `employee_id` char(6) NOT NULL,
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   PRIMARY KEY (`employee_id`)
@@ -36,7 +36,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES ('AM01','Annalisa','Misra'),('CO01','Catherine','O\'Neill-Lynch');
+INSERT INTO `employee` VALUES ('AM0001','Annalisa','Misra'),('CO0001','Catherine','O-Neill-Lynch'),('JW0001','Jordan','Williamson');
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-25 11:18:03
+-- Dump completed on 2016-08-25 11:58:27
