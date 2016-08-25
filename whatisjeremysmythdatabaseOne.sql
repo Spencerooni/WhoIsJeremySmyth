@@ -27,7 +27,9 @@ CREATE TABLE `department` (
   `name` enum('Enterprise','Evolve','Gov','Finance','Systems','R & D') DEFAULT NULL,
   `description` varchar(150) DEFAULT NULL,
   `lead_id` char(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `lead_id` (`lead_id`),
+  CONSTRAINT `department_ibfk_1` FOREIGN KEY (`lead_id`) REFERENCES `employee` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -89,7 +91,8 @@ CREATE TABLE `sales_employee` (
   `commission_rate` int(11) NOT NULL,
   `total_sales` int(11) DEFAULT NULL,
   PRIMARY KEY (`employee_id`),
-  CONSTRAINT `sales_employee_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
+  CONSTRAINT `sales_employee_ibfk_1` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`),
+  CONSTRAINT `sales_employee_ibfk_2` FOREIGN KEY (`employee_id`) REFERENCES `employee` (`employee_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -111,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-25 15:26:25
+-- Dump completed on 2016-08-25 16:19:52
