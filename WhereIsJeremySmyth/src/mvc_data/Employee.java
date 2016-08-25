@@ -6,18 +6,18 @@ package mvc_data;
 public class Employee {
 
 	private String empID;
-	private String fName;
-	private String lName;
+	private String firstName;
+	private String lastName;
 	
 	/**
 	 * Empty Constructor
 	 */
 	public Employee() {}
 	
-	public Employee(String empID, String fName, String lName) {
+	public Employee(String empID, String firstName, String lastName) {
 		this.empID = empID;
-		this.fName = fName;
-		this.lName = lName;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public String getEmpID() {
@@ -28,20 +28,20 @@ public class Employee {
 		this.empID = empID;
 	}
 
-	public String getfName() {
-		return fName;
+	public String getfirstName() {
+		return firstName;
 	}
 
-	public void setfName(String fName) {
-		this.fName = fName;
+	public void setfirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getlName() {
-		return lName;
+	public String getlastName() {
+		return lastName;
 	}
 
-	public void setlName(String lName) {
-		this.lName = lName;
+	public void setlastName(String lastName) {
+		this.lastName = lastName;
 	}
 	
 	
