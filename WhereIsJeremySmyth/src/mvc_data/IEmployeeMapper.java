@@ -12,7 +12,7 @@ public interface IEmployeeMapper
 			+ "(#{empID}, #{firstName},#{lastName}, #{addressLineOne},"
 			+ "#{addressLineTwo},#{addressLineThree},#{city},#{county},#{postCode},"
 			+ "#{country},#{emailAddress},#{natInsuranceNum},#{accountName},#{IBAN},"
-			+ "#{BIC}),#{startSalary}")
+			+ "#{BIC},#{startSalary})")
 	void insertEmployee(Employee newEmployee);
 	
 	

@@ -36,14 +36,15 @@ public class EmployeeController {
 		employee.setAddressLineThree(request.getParameter("address3"));
 		employee.setCity(request.getParameter("city"));
 		employee.setCounty(request.getParameter("county"));
-		employee.setCountry(request.getParameter("country"));
 		employee.setPostCode(request.getParameter("postcode"));
+		employee.setCountry(request.getParameter("country"));
 		employee.setEmailAddress(request.getParameter("email"));
 		employee.setNatInsuranceNum(request.getParameter("nationalInsuranceNum"));
 		employee.setAccountName(request.getParameter("accountName"));
 		employee.setIBAN(request.getParameter("iban"));
 		employee.setBIC(request.getParameter("bic"));
-		employee.setStartSalary(Integer.parseInt(request.getParameter("salary")));
+		int salary = (Integer.parseInt(request.getParameter("salary")));
+		employee.setStartSalary(salary);
 		
 		model.addAttribute("employee", employee);
 		
