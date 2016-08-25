@@ -40,7 +40,7 @@
   	</dependency>
   	<dependency>
   		<groupId>mysql</groupId>
-  		<artifactId>mysql-connect-java</artifactId>
+  		<artifactId>mysql-connector-java</artifactId>
   		<version>5.1.39</version>
   	</dependency>
   	<dependency>
@@ -69,9 +69,14 @@
   		<version>4.2.6.RELEASE</version>
   	</dependency>
   	<dependency>
-  		<groupId>javat.servlet</groupId>
-  		<artifactId>jsH</artifactId>
-  		<version>1.1.2</version>
+  		<groupId>org.apache.taglibs</groupId>
+  		<artifactId>taglibs-standard-impl</artifactId>
+  		<version>1.2.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.taglibs</groupId>
+  		<artifactId>taglibs-standard-spec</artifactId>
+  		<version>1.2.1</version>
   	</dependency>
   </dependencies>
 </project>
